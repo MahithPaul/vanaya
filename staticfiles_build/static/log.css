@@ -1,0 +1,224 @@
+/* ==================Header part======================= */
+header{
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #0c602b;
+}
+.css-123{
+    display: block;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0px 170px;
+}
+.head-css{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+}
+.css-122{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.s-button{
+    padding: 0.7rem 1rem;
+    color: #f9f9f9;
+    text-decoration: none;
+    border: 1px solid white;
+}
+.css-bg{
+    height: 328px;
+    background-image: url("../static/login.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* ===============================End==================================== */
+/* ===============================Form========================= */
+
+.main-form{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    margin: 0px auto !important ;
+    background-color: #f3eee7;
+}
+.css-form{
+    transform: translateY(-105px);
+    width: 50%;
+    padding: 0px 1rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    /* border: 0.0625rem solid #b3b3b3; */
+    border-radius: 0.25rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.css-478{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.css-f{
+    width: 100%;
+    padding: 15px 0px;
+}
+.css-456{
+    width: 100%;
+    padding: 15px 0px;
+    margin-top: 10px;
+}
+.css-455{
+    width: 80%;
+    padding: 15px 0px;
+}
+.css-450{
+    display: flex;
+    justify-content: space-evenly;
+}
+.css-bold{
+    font-weight: 500;
+}
+.css-main-form{
+    margin-top: 15px;
+}
+form{
+    padding: 0px 10px;
+}
+.css-400{
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+label{
+    margin-bottom: 10px !important;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.input-css, .input-css-1{
+    padding: 0.9rem 3rem 0.9rem 1.25rem;
+    width: 100%;
+    border: 0.0625rem solid #b3b3b3;
+    border-radius: 0.25rem;
+    outline: none;
+}
+.css-1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.css-401{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.css-2{
+    margin-bottom: 15px;
+}
+.css-32{
+    margin-bottom: 15px !important;
+}
+.b-button{
+    padding: 1rem 2.5rem;
+    color: #f9f9f9;
+    font-size: 16px;
+    background-color: #090909;
+    border: 1px solid black;   
+    margin: 0.5rem 0 ;
+    transition: .2s ease-out;
+    margin-bottom: 20px;
+}
+.b-button:hover{
+    background-color: #131212;
+    cursor: pointer;
+} 
+/* ==============================Footer============================== */
+footer{
+    background-color: #131212;
+}
+.foot-css{
+    margin: 0px auto;
+    background-color: #131212;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    border-bottom: 0.0625rem dotted #b3b3b3;
+}
+.css-logo{
+    margin-top: 30px;
+    width: 20%;
+}
+.css-footer{
+    width: 28%;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.css-footer-1{
+    width: 30%;
+    margin-left: 50px !important;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.css-143{
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+.css-350{
+    width: 40%;
+}
+.css-352{
+    width: 50%;
+}
+.css-209{
+    list-style: none;
+    color: #fff;
+    margin-top: 20px;
+    transition: .3s ease-out;
+}
+.css-211:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.css-210{
+    margin-bottom: 15px;
+}
+.css-211{
+ color: #b3b3b3;
+ text-decoration: none;
+}
+.link-css{
+    margin-top: 20px;
+}
+.css-349{
+    padding: 10px 15px 10px 0px;
+    font-size: 2rem;
+    color: #b3b3b3;
+}
+.f:hover{
+    color: #1f62f1;
+}
+.i:hover{
+    color: #f11f77;
+}
+.l:hover{
+    color: #1f93f1;
+}
+.y:hover{
+    color: #f11f2a;
+}
+.css-789{
+    padding: 20px 0px;
+    background-color: #131212;
+}
+.css-09{
+    text-align: center;
+    color: #f3eee7;
+}

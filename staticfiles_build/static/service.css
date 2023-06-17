@@ -1,0 +1,151 @@
+.css-ser-bg{
+    height: 364px;
+    background-image: url("../static/service-bg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.selection{
+    padding: 20px 10px;
+    background-color: #e9f1fa;
+}
+.css-exp{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.9rem;
+    font-weight: 200;
+}
+.css-flex{
+    padding: 25px 30px;
+}
+.css-cottage{
+    padding: 35px 0px;
+    width: 100%;
+}
+.css-h1{
+    color: #131212 !important;
+    padding-left: 30px;
+    border-left: 5px solid #0c602b;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    text-decoration: none !important;
+    font-weight: 700;
+}
+.css-388{
+    background-color: #f8f8f8;
+    height: 402px;
+    border: .5px solid #979797;
+    margin:  0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.css-001{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    gap: 30px;
+    color: #131212 !important;
+}
+.css-001 p{
+    font-size: 1.5rem;
+}
+.css-m{
+    text-align: center;
+    width: 37%;
+}
+.css-res{
+    flex-direction: row-reverse;
+}
+.css-002{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 30px;
+    gap: 80px;
+    justify-content: center;
+}
+/* =========================FOOTER============================ */
+footer{
+    background-color: #131212;
+}
+.foot-css{
+    margin: 0px auto;
+    background-color: #131212;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    border-bottom: 0.0625rem dotted #b3b3b3;
+}
+.css-logo{
+    margin-top: 30px;
+    width: 20%;
+}
+.css-footer{
+    width: 28%;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.css-footer-1{
+    width: 30%;
+    margin-left: 50px !important;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.css-143{
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+.css-350{
+    width: 40%;
+}
+.css-352{
+    width: 50%;
+}
+.css-209{
+    list-style: none;
+    color: #fff;
+    margin-top: 20px;
+    transition: .3s ease-out;
+}
+.css-211:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.css-210{
+    margin-bottom: 15px;
+}
+.css-211{
+ color: #b3b3b3;
+ text-decoration: none;
+}
+.link-css{
+    margin-top: 20px;
+}
+.css-349{
+    padding: 10px 15px 10px 0px;
+    font-size: 2rem;
+    color: #b3b3b3;
+}
+.f:hover{
+    color: #1f62f1;
+}
+.i:hover{
+    color: #f11f77;
+}
+.l:hover{
+    color: #1f93f1;
+}
+.y:hover{
+    color: #f11f2a;
+}
+.css-789{
+    padding: 20px 0px;
+    background-color: #131212;
+}
+.css-09{
+    text-align: center;
+    color: #f3eee7;
+}

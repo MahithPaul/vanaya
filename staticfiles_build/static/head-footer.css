@@ -1,0 +1,320 @@
+/* ==================Header part======================= */
+header{
+    width: 100%;
+    background-color: #0c602b !important;
+    color: #fff;
+    z-index: 9;
+}
+.globalStickyHeader{
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    backdrop-filter: blur(4px);
+}
+.css-123{
+    display: block;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0px 170px;
+}
+.head-css{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+}
+.css-122{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.css-res-12{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center; 
+}
+.s-button{
+    text-align: center !important;
+    padding: 0.6rem 1.5rem;
+    color: #ffff;
+    text-decoration: none;
+    border: 1px solid #fff;
+}
+.css-124{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.b-t{
+    background-color: rgba(12, 96, 43, 0.774);
+    border-top: 1.5px solid #949494;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.css-223{
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+}
+.css-list{
+    padding: 1rem 0 !important;
+    text-transform: uppercase;
+}
+.css-list:hover{
+    border-bottom: 0.2125rem solid #fff;
+}
+.list-a{
+    color: #f9f9f9;
+    text-decoration: none;
+    padding: .1rem 0 !important;
+}
+.b-button{
+    padding: 0.7rem 1.9rem;
+    color: #f9f9f9;
+    text-align: center !important;
+    text-decoration: none;
+    background-color: #000;
+    border: 1px solid #000;   
+    margin: 0.5rem 0 ;
+    transition: .2s ease-out;
+}
+.b-button:hover{    
+    background-color: #000;
+    transform: scale(1.062);
+}
+/* ====================END HEAD=========================== */
+/* =========================FOOTER============================ */
+footer{
+    background-color: #131212;
+}
+.foot-css{
+    margin: 0px auto;
+    background-color: #131212;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    border-bottom: 0.0625rem dotted #b3b3b3;
+}
+.css-logo{
+    margin-top: 30px;
+    width: 20%;
+}
+.css-footer{
+    width: 28%;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.css-footer-1{
+    width: 30%;
+    margin-left: 50px !important;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.css-143{
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+.css-350{
+    width: 40%;
+}
+.css-352{
+    width: 50%;
+}
+.css-209{
+    list-style: none;
+    color: #fff;
+    margin-top: 20px;
+    transition: .3s ease-out;
+}
+.css-211:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.css-210{
+    margin-bottom: 15px;
+}
+.css-211{
+ color: #b3b3b3;
+ text-decoration: none;
+}
+.link-css{
+    margin-top: 20px;
+}
+.css-349{
+    padding: 10px 15px 10px 0px;
+    font-size: 2rem;
+    color: #b3b3b3;
+}
+.f:hover{
+    color: #1f62f1;
+}
+.i:hover{
+    color: #f11f77;
+}
+.l:hover{
+    color: #1f93f1;
+}
+.y:hover{
+    color: #f11f2a;
+}
+.css-789{
+    padding: 20px 0px;
+    background-color: #131212;
+}
+.css-09{
+    text-align: center;
+    color: #f3eee7;
+}
+/* ===============================FOOTER END======================= */
+  .mobile-hamburger{
+    display: none;
+  }
+  #mobile-nav{
+    display: none;
+  }
+  .overlay {
+    display: none;
+    height: 600px;
+    width: 0%;
+    height: calc(100vh - 10px);
+    border-bottom-right-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    background-color: #0c602b;
+    overflow-x: hidden;
+    transition: 1s;
+}
+.closebtn{
+    padding: 0px 1.4rem;
+    float: right;
+    color: #fff;
+    text-decoration: none;
+}
+.overlay-content{
+    padding: 1rem .7rem;
+}
+.css-menu{
+    text-align: center;
+    font-size: 2rem;
+    margin-left: 30px;
+}
+.css-item{
+    padding: 1.5rem 0rem;
+}
+.css-item ul{
+    list-style: none;
+}
+.css-item ul li{
+    padding: 1rem 0rem;
+    border-bottom: 1px solid silver;
+    font-size: 1.2rem;
+}
+.css-item ul li a{
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: 0.4s all ease-in;
+}
+.css-mobile{
+    width: 100%;
+    display: block;
+    padding: 0.7rem 1.9rem;
+    color: #f9f9f9;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    border: 1px solid #000;   
+    margin: 1rem 0 ;
+    transition: .2s ease-out;
+}
+/* ====================================================
+============MOBILE VIEW HEAD AND FOOTER=============
+==================================================== */
+@media screen and (max-width: 450px) {
+    .b-t, .m-b , .css-122, .css-res-12{
+        display: none !important;
+    }
+    .mobile-hamburger{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+      .css-123{
+        margin: 0px;
+      }
+      .foot-css{
+          flex-direction: column;
+          align-items: center;
+      }
+      .css-logo{
+          width: 47%;
+      }
+      .css-footer{
+          width: 90%;
+          justify-content: center;
+          margin-bottom: 25px !important;
+          align-items: center;
+      }
+      .css-footer-1{
+          width: 95%;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          margin-left: 0px !important;
+          margin-top: 0px;
+      }
+      .css-350{
+          width: 80%;
+          margin-bottom: 15px;
+      }
+      .css-352{
+          width:80%;
+      }
+      .css-form {
+          width: 95%;
+      }
+      .css-450 {
+          text-align: center;
+          display: block;
+          gap: 0px;
+      }
+      /* ==================BOOKING PAGE========================== */
+      .css-book-main{
+        height: 100vh;
+      }
+      .css-book-form{
+        transform: translateY(-175px);
+        width: 95%;
+      }
+      .css-booking {
+          flex-direction: column;
+      }
+      .css-book-img img{
+          width: 351px;
+          height: 351px;
+      }
+      .css-booking-d-main{
+        margin-left: 0px;
+        margin-top: 20px;
+        padding: 0px 10px;
+      }
+      .css-nights{
+        width: 95%;
+      }
+      .css-input-123{
+        width: 45%;
+        padding: 6px 15px;
+      }
+    .css-night-counts{
+        font-size: .97rem;
+    }
+  }

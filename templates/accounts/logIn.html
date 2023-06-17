@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign-In | Vanya Hill Resort</title>
+        <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'log.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="css-123">
+            <div class="head-css">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                <div class="css-122">
+                    <a href="{% url 'index' %}" class="s-button">Home</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="css-bg"></div>
+    <section class="main-form">
+        <div class="css-form">
+            <div class="css-456">
+                <h1 style="text-align: center;">Vanya Hill Resort</h1>
+            </div>
+
+            <div class="css-main-form">
+                <form  method="POST">
+                    {% csrf_token %}
+                    {% include "base/alert.html" %}
+                    <br>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="Email" class="input-css-1" required>
+                        </div>
+                    </div>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="password" class="css-32">password</label>
+                            <input type="password" name="password" placeholder="Password" class="input-css-1" aria-hidden="true" required>
+                        </div>
+                    </div>
+                    <div class="css-478">
+                        <div class="css-f css-bold">
+                            <a href="{% url 'forgot_password' %}">Forgot Password</a>
+                        </div>
+                        <div class="css-455 css-450 css-bold">
+                            <p>Start Your Journey </p><a href="{% url 'register' %}">Sign Up Today!</a>
+                        </div>
+                    </div>
+                    <input type="submit" value="Sign In" class="b-button">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="foot-css">
+            <div class="css-logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+            </div>
+            <div class="css-footer">
+                <div class="css-350">
+                    <p class="css-143">Services</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Mini Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Suit Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Deluxe Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Royal Cottage</a></li>
+                    </ul>
+                </div>
+                <div class="css-350">
+                    <p class="css-143">Quick Links</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'index' %}" class="css-211">Home</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Packages</a></li>
+                        <li class="css-210"><a href="#" class="css-211">About</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="css-footer-1">
+                <div class="css-352">
+                    <p class="css-143">Connect</p>
+                    <div class="link-css">
+                        <a href="#" class="css-349"><iconify-icon icon="mdi:facebook" class="f"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="iconoir:instagram" class="i"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="ant-design:linkedin-filled" class="l"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="basil:youtube-solid" class="y"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+                
+            
+        </div>
+        <div class="css-789">
+          <p class="css-09">© 2023 Vanya Hill Resort</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caudex', serif !important;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0c602b;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: #ccc;
+    border-radius: 20px;
+  }
+  .css-123-sign{
+    display: block;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0px 170px;
+}
+.bounce{
+    animation: bouncing 1.2s ease infinite alternate ;
+}
+@keyframes bouncing{
+    0% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+  /* ===========================Sign-Up PAGE LAYOUT=============================== */
+  @media screen and (max-width: 450px) {
+    .css-123-sign{
+        margin: 0px;
+    }
+    .css-234{
+        margin: 10px 15px;
+    }
+    .icon-s {
+        font-size: 35px;
+    }
+    .icon-text h3{
+        font-size: 12px;
+    }
+    .css-20{
+        flex-direction: column;
+        margin: 30px 10px;
+    }
+    .css-20 img{
+        width: 347px;
+        height: 280px;
+    }
+    .css-21{
+        padding: 0px 10px;
+    }
+    .input-css{
+        padding: 0.9rem 2rem 0.9rem 1.25rem;
+    }
+  }
+/* ===========================Service and SigIn PAGE LAYOUT=============================== */
+@media screen and (max-width: 450px) {
+    .css-f{
+        width: 80%;
+    }
+    .css-flex{
+        padding: 0px;
+    }
+    .css-388{
+        margin: 10px 0px;
+        flex-direction: column;
+        height: auto;
+    }
+    .css-388 img{
+        width: 351px;
+        height: 351px;
+    }
+    .css-002{
+        padding-top: 20px;
+        gap: 30px;
+    }
+    .css-m {
+        margin-bottom: 30px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .css-img-cottage{
+        width: calc(100% - 20px);
+        margin: 0px 20px;
+    }
+    .css-img-cottage img{
+        width: 351px;
+        height: 351px;    
+    }
+    .css-flex-cottage{
+        flex-direction: column;
+    }
+    .single-info__details li{
+        font-size: 1.2rem;
+    }
+    .css-360-tour img{
+        width: 351px;
+        height: 351px; 
+    }
+    .single-info__detail{
+        justify-content: left;
+    }
+    .single-info__detail li{
+        flex: none;
+    }
+    swiper-container {
+        width: 80%;
+        padding-bottom: 2rem;
+    }
+    .review-slide img {
+        width: 301px;
+        height: 351px; 
+    }
+    .css-price-book-01{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 450px)  {
+    .css-table-total{
+        flex-direction: column;
+        padding: 0px
+    }
+    .css-cart-form{
+        width: 95%;
+        transform: translateY(-175px);
+        margin-bottom: 0px;
+    }
+    .css-tr{
+        flex-direction: column;
+    }  
+    .cart-table{
+        width: 100%;
+    } 
+    .css-tr img{
+        margin: 0px 45px;
+    }
+    .css-cart-main{
+        height: auto;
+    }
+    .css-cart-info{
+        margin-bottom: 10px;
+    }
+    .css-cart-total{
+        margin-left: 0px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .css-cart-total-1{
+        margin-bottom: 20px;
+    }
+}
+/* =================HOMEPAGE==================== */
+@media screen and (max-width: 450px) {
+    .css-resort {
+        flex-direction: column;
+        padding: 0px 20px;
+    }
+    .css-image-01{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .css-image-01 img {
+        width: 365px;
+        height: 258px;
+        margin: 0px auto;
+    }
+    .about-contact {
+        padding: 40px 0px;
+    }
+    .iframe {
+    border-radius: 12px;
+    width: 360px;
+    margin: 0px 10px;
+    height: 295px
+    }
+    .css-explore-tour{
+        flex-direction: column;
+    }
+    .css-resort-font {
+        text-align: center;
+    }
+    .css-features {
+        gap: 30px;
+        grid-template-columns: 1fr;
+    }
+    .css-sign-now {
+        padding: 20px 10px 30px;
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+    }
+    .css-sign-now h1{
+        font-size: 2rem;
+    }
+    .css-ml{
+        margin-left: 60px;
+    }
+    .css-contact-main{
+        flex-direction: column;
+        gap: 50px;
+        padding: 10px 20px;
+    }
+    .css-contact-map{
+        display: flex;
+        justify-content: center;
+    }
+    .css-contact-map iframe {
+        width: 365px;
+        height: 225px;
+    }
+}

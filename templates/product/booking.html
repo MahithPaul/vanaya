@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your {{product.product_name}} | Vanya Hill Resort</title>
+    <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'book.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'head-footer.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var dateFormat = "dd/mm/yy",
+                currentDate = new Date(),
+                from = $("#from")
+                    .datepicker({
+                        defaultDate: "+1w",
+                        dateFormat: "dd/mm/yy",
+                        minDate: currentDate, // Set the minimum date to the current date
+                    })
+                    .on("change", function () {
+                        to.datepicker("option", "minDate", getDate(this));
+                        calculateNights();
+                    }),
+                to = $("#to").datepicker({
+                    defaultDate: "+1w",
+                    dateFormat: "dd/mm/yy",
+                })
+                    .on("change", function () {
+                        from.datepicker("option", "maxDate", getDate(this));
+                        calculateNights();
+                    });
+    
+            function getDate(element) {
+                var date;
+                try {
+                    date = $.datepicker.parseDate(dateFormat, element.value);
+                } catch (error) {
+                    date = null;
+                }
+    
+                return date;
+            }
+    
+            function calculateNights() {
+                var checkIn = from.datepicker("getDate");
+                var checkOut = to.datepicker("getDate");
+    
+                if (checkIn && checkOut) {
+                    var timeDiff = checkOut.getTime() - checkIn.getTime();
+                    var numNights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                    $("#numNights").text(numNights);
+                } else {
+                    $("#numNights").text("");
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="css-123">
+            <div class="head-css">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                {% if current_user.is_authenticated %}
+                <div class="css-res-12">
+                    <a href="{% url 'cart' %}" class="b-button">My Bookings</a>
+                    <a href="{% url 'user_carts' %}"  class="s-button">Previous Bookings</a>
+                    <a href="{% url 'logout' %}"  class="s-button">Log out</a>
+                </div>
+                {% else %}
+                <div class="css-122">
+                    <a href="{% url 'login' %}" target="_blank" class="s-button">Sign in or Join</a>
+                </div>
+                {% endif %}
+                <div class="mobile-hamburger">
+                    <iconify-icon icon="iconamoon:menu-burger-horizontal-thin" onclick="openNav()"
+                        height="33px"></iconify-icon>
+                </div>
+            </div>
+        </div>
+        <div class="b-t m-b">
+            <div class="css-123">
+                <div class="css-124">
+                    <nav>
+                        <ul class="css-223">
+                            <li class="css-list"><a href="{% url 'index' %}" class="list-a">Home</a></li>
+                            <li class="css-list"><a href="{% url 'service' %}" class="list-a">Services</a></li>
+                            <li class="css-list"><a href="#" class="list-a">About</a></li>
+                            <li class="css-list"><a href="#" class="list-a">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <a href="{% url 'service' %}" class="b-button">Book Now</a>
+                </div>
+            </div>
+        </div>
+         <!-- mobile menu  -->
+         <div class="overlay" id="mobile-nav" style="width:100%;">
+            <a href="javascript:void(0)" class="closebtn" onclick="hidePopup()" style="font-size: 55px;">×</a>
+
+            <div class="overlay-content">
+                <div class="css-menu">
+                    <p>Menu</p>
+                </div>
+                <div class="css-item">
+                    <ul>
+                        <li><a href="{% url 'index' %}" class="css-a">Home</a></li>
+                        <li><a href="{% url 'service' %}" class="css-a">Service</a></li>
+                        <li><a href="log-in.html" class="css-a css-h">About</a></li>
+                        <li><a href="Contact.html" class="css-a">Contact</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{% url 'cart' %}" class="b-button css-mobile-side">My Bookings</a></li>
+                        <li><a href="{% url 'user_carts' %}"  class="s-button css-mobile-side">Previous Bookings</a></li>
+                        <li><a href="{% url 'logout' %}"  class="s-button css-mobile-side">Log out</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}" class="css-ht4">Sign In or Join</a></li>
+                        {% endif %}
+                    </ul>
+                    <a href="{% url 'service' %}" class="css-mobile">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- ==================== -->
+    </header>
+    <div class="css-book">
+    </div>
+    <section class="css-book-main">
+        <div class="css-book-form">
+            <div class="css-book-title">
+                <h1>Book your {{product.product_name}}</h1>
+            </div>
+            <div class="css-booking">
+                <div class="css-book-img">
+                    <img src="/media/{{product.title_images.first.image}}" alt="img" width="422px" height="442px">
+                </div>
+                <div class="css-booking-d-main">
+                    <h1 style="font-weight: 700;">Booking Details</h1>
+                    
+                    {% include "base/alert.html" %}
+                
+                    <form method="POST" action = "{% url 'add_to_cart' product.uid %}">
+                        {% csrf_token %}
+                        <div class="css-price-night-1">
+                            <h1 class="css-price">₹{{product.price}} </h1>
+                            <span>/Per Night</span>
+                        </div>
+                        
+                        <div class="css-987">
+                            <div class="css-nights">
+                                <p>No.Of Cottages</p>
+                                <div class="quantity-control">
+                                    <span class="decrement-button" onclick="decrement('.quantity-input')">-</span>
+                                    <input type="text" name="quant" class="quantity-input" value="01">
+                                    <span class="increment-button" onclick="increment('.quantity-input', 4)">+</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <input type="text" id="from" name="dfrom" placeholder="Check-In" class="css-input-123">
+                        <label for="to" style="font-weight: bold; font-size:1.4rem; ">-</label>
+                        <input type="text" id="to" name="dto" class="css-input-123" placeholder="Check-Out">
+                        <div class="css-night-count">
+                            <p>Number of Nights: <span id="numNights"></span></p>
+                        </div>
+                        <div class="css-night-count">
+                            <p>The cottage can accommodate a minimum of 2 people and a maximum of 5 people, along with up to 4 children</p>
+                        </div>
+                        <div class="css-night-counts">
+                            <p>Check-in: 12:00 PM | Check-out: 11:00 AM</p>
+                        </div>
+                        <input type="submit" class="css-322" value="Add To List">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="foot-css">
+            <div class="css-logo">
+                <a href="../index.html">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+            </div>
+            <div class="css-footer">
+                <div class="css-350">
+                    <p class="css-143">Services</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Mini Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Suit Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Deluxe Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Royal Cottage</a></li>
+                    </ul>
+                </div>
+                <div class="css-350">
+                    <p class="css-143">Quick Links</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'index' %}" class="css-211">Home</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Packages</a></li>
+                        <li class="css-210"><a href="#" class="css-211">About</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="css-footer-1">
+                <div class="css-352">
+                    <p class="css-143">Connect</p>
+                    <div class="link-css">
+                        <a href="#" class="css-349"><iconify-icon icon="mdi:facebook" class="f"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="iconoir:instagram" class="i"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="ant-design:linkedin-filled"
+                                class="l"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="basil:youtube-solid"
+                                class="y"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="css-789">
+            <p class="css-09">© 2023 Vanya Hill Resort</p>
+        </div>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mobile-nav").style.width = "70%";
+            document.getElementById("mobile-nav").style.display = "block";
+        }
+        function hidePopup() {
+            document.getElementById("mobile-nav").style.width = "0%";
+        }
+    </script>
+    <script>
+        var className = "globalStickyHeader";
+        var scrollTrigger = 80;
+
+        window.onscroll = function () {
+            // We add pageYOffset for compatibility with IE.
+            if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+                document.getElementsByClassName("b-t")[0].classList.add(className);
+            } else {
+                document.getElementsByClassName("b-t")[0].classList.remove(className);
+            }
+        };
+
+    </script>
+
+
+    <script>
+        function format(num) {
+            return num > 9 ? num : "0" + num;
+        }
+
+        function decrement(selector) {
+            let input = document.querySelector(selector);
+            let number = parseInt(input.value);
+            if (number === 0) {
+                input.value = "00";
+            } else {
+                input.value = format(number - 1);
+            }
+        }
+
+        function increment(selector, max) {
+            let input = document.querySelector(selector);
+            let number = parseInt(input.value);
+            if (number === max) {
+                input.value = format(max);
+            } else {
+                input.value = format(number + 1);
+            }
+        }
+
+        document.addEventListener("keyup", (event) => {
+            if (event.target.matches(".quantity-input")) {
+                validateInput(event.target);
+            } else if (event.target.matches(".qu-input")) {
+                validateInput(event.target);
+            } else if (event.target.matches(".q-input")) {
+                validateInput(event.target);
+            }
+        });
+
+        function validateInput(input) {
+            let number = parseInt(input.value);
+            if (isNaN(number) || number < 1) {
+                input.value = "01";
+            } else {
+                input.value = format(number);
+            }
+        }
+    </script>
+
+</body>
+<html

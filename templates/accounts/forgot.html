@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forgot Password | Vanya Hill Resort</title>
+        <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'forgot.css' %}">
+        <!-- <link rel="stylesheet" href="../assets/css/mobile.css"> -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="css-123-sign">
+            <div class="head-css">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                <div class="css-122">
+                    <a href="{% url 'index' %}" class="s-button">Home</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="main-form">
+        <div class="css-form">
+            <div class="css-456">
+                <h1 style="text-align: center;">Forgot Password</h1>
+            </div>
+
+            <div class="css-main-form">
+                <form method="POST" action="{% url 'forgot_password' %}">
+                    {% csrf_token %}
+                    {% include "base/alert.html" %}
+                    <br>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="Enter Email" class="input-css-1" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" class="b-button">
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

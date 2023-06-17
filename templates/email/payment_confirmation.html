@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Confirmation</title>
+  <style>
+    /* Add your custom styling here */
+
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      color: #333333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f1f2f3;
+    }
+
+    .card {
+      max-width: 700px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        color: #333333;
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+        color: #333333;
+      margin-bottom: 10px;
+    }
+    .cart-item {
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .item-name {
+      font-weight: bold;
+    }
+
+
+    /* Company logo styles */
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Social media links styles */
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #333333;
+      text-decoration: none;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 600px) {
+      h1 {
+        color: #333333;
+        font-size: 20px;
+      }
+
+      p {
+        color: #333333;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="https://github.com/MahithPaul/vanya/blob/master/assets/img/VANYA%20LOGO%20PNG.png" alt="Logo" width="170px" height="60px">
+    </div>
+
+    <h1>Payment Confirmation</h1>
+
+    <p>Dear {{ cart.user_first_name}},</p>
+
+    <p>Thank you for your payment. We are pleased to confirm your purchase. Below are the details of your order:</p>
+    {% for cart_item in cart_items %}
+    <!-- Cart item  -->
+    <div class="cart-item">
+      <div class="item-name">{{ cart_item.product }}</div>
+      <div>Total Price: ₹{{ cart_item.total_price }}</div>
+      <div>Nights: {{ cart_item.nn }}</div>
+      <div>Check-In: {{ cart_item.dfrom }}</div>
+      <div>Check-Out: {{ cart_item.dto }}</div>
+      <div>Quantity: {{ cart_item.ncottage }}</div>
+    </div>
+    {% endfor %}
+    
+    <!-- Add more cart items as needed -->
+
+    <h2>Total Price: ₹{{ total_price_sum }}</h2>
+    <h2>Paid On: {{ cart.paid_on }}</h2>
+
+    <p>If you have any questions or need further assistance, please feel free to contact our customer support.</p>
+
+    <p>Thank you for choosing our services!</p>
+
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</body>
+
+</html>

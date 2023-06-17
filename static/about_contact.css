@@ -1,0 +1,80 @@
+.about-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    margin: 0 auto;
+}
+
+.css-about{
+    background-color: #f5f7f9;
+    padding: 10px 10px 30px;
+    border-radius: 12px;
+}
+.css-about h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.css-resort{
+    margin-top: 40px;
+    display: flex;
+    gap: 50px;
+    padding: 0px 30px;
+    justify-content: space-between;
+}
+.css-image-01 img{
+    width: 695px;
+    height: 428px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.csss-matter p{
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.css-269{
+    list-style: none;
+    padding: 1.7rem 0rem 2rem;
+}
+.css-269 li{
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1rem 0rem;
+}
+.css-contact-main{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 50px;
+    gap: 150px;
+}
+.css-contact-map{
+    width: 100%;
+}
+.css-contact-map iframe{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+}
+.css-p-con{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.css-phone{
+    display: flex;
+    gap: 5px;
+}
+.css-info-con{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+.css-info-con p{
+    line-height: 30px;
+}

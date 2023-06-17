@@ -1,0 +1,536 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Vanya Hill Resort</title>
+    <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="css-123">
+            <div class="head-css">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                {% if current_user.is_authenticated %}
+                <div class="css-res-12">
+                    <a href="{% url 'cart' %}" class="b-button">My Bookings</a>
+                    <a href="{% url 'user_carts' %}"  class="s-button">Previous Bookings</a>
+                    <a href="{% url 'logout' %}"  class="s-button">Log out</a>
+                </div>
+                {% else %}
+                <div class="css-122">
+                    <a href="{% url 'login' %}" target="_blank" class="s-button">Sign in or Join</a>
+                </div>
+                {% endif %}
+                <div class="mobile-hamburger">
+                    <iconify-icon icon="iconamoon:menu-burger-horizontal-thin" onclick="openNav()"
+                        height="33px"></iconify-icon>
+                </div>
+            </div>
+        </div>
+        <div class="b-t m-b">
+            <div class="css-123">
+                <div class="css-124">
+                    <nav>
+                        <ul class="css-223">
+                            <li class="css-list"><a href="{% url 'index' %}" class="list-a">Home</a></li>
+                            <li class="css-list"><a href="{% url 'service' %}" class="list-a">Services</a></li>
+                            <li class="css-list"><a href="#" class="list-a">About</a></li>
+                            <li class="css-list"><a href="#" class="list-a">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <a href="{% url 'service' %}" class="b-button">Book Now</a>
+                </div>
+            </div>
+        </div>
+         <!-- mobile menu  -->
+         <div class="overlay" id="mobile-nav" style="width:100%;">
+            <a href="javascript:void(0)" class="closebtn" onclick="hidePopup()" style="font-size: 55px;">×</a>
+
+            <div class="overlay-content">
+                <div class="css-menu">
+                    <p>Menu</p>
+                </div>
+                <div class="css-item">
+                    <ul>
+                        <li><a href="{% url 'index' %}" class="css-a">Home</a></li>
+                        <li><a href="{% url 'service' %}" class="css-a">Service</a></li>
+                        <li><a href="log-in.html" class="css-a css-h">About</a></li>
+                        <li><a href="Contact.html" class="css-a">Contact</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{% url 'cart' %}" class="b-button css-mobile-side">My Bookings</a></li>
+                        <li><a href="{% url 'user_carts' %}"  class="s-button css-mobile-side">Previous Bookings</a></li>
+                        <li><a href="{% url 'logout' %}"  class="s-button css-mobile-side">Log out</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}" class="css-ht4">Sign In or Join</a></li>
+                        {% endif %}
+                    </ul>
+                    <a href="{% url 'service' %}" class="css-mobile">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- ==================== -->
+    </header>
+
+    <section class="home">
+        <div class="swiper bg-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide dark-layer">
+                    <img src="{% static 'home-1.png' %}" alt="image">
+                    <div class="text-content">
+                        <h1>Vanya Resorts</h1>
+                    </div>
+                </div>
+                <div class="swiper-slide dark-layer">
+                    <img src="{% static 'home-2.png' %}" alt="image">
+                    <!-- <div class="text-content">
+                    <h1>Vanya Resorts</h1>
+                </div> -->
+                </div>
+                <div class="swiper-slide dark-layer">
+                    <img src="{% static 'home-3.png' %}" alt="image">
+                    <!-- <div class="text-content">
+                    <h1>Vanya Resorts</h1>
+                </div> -->
+                </div>
+                <div class="swiper-slide dark-layer">
+                    <img src="{% static 'home-4.png' %}" alt="image">
+                    <!-- <div class="text-content">
+                    <h1>Vanya Resorts</h1>
+                </div> -->
+                </div>
+                <div class="swiper-slide dark-layer">
+                    <img src="{% static 'home-5.png' %}" alt="image">
+                    <!-- <div class="text-content">
+                    <h1>Vanya Resorts</h1>
+                </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="bg-slider-thumds">
+            <div class="swiper-wrapper thumbs-container">
+                <img src="{% static 'home-1.png' %}" class="swiper-slide" alt="image">
+                <img src="{% static 'home-2.png' %}" class="swiper-slide" alt="image">
+                <img src="{% static 'home-3.png' %}" class="swiper-slide" alt="image">
+                <img src="{% static 'home-4.png' %}" class="swiper-slide" alt="image">
+                <img src="{% static 'home-5.png' %}" class="swiper-slide" alt="image">
+            </div>
+        </div>
+    </section>
+
+    <section class="about section">
+        <h2>Welcome to</h2>
+        <h1>VANYA Hill RESORTS</h1>
+        <div class="css-resort">
+            <div class="csss-matter">
+                <p>Experience the epitome of luxury and tranquility at Vanyahill Resort. Nestled amidst breathtaking
+                    natural surroundings, our resort offers a perfect blend of comfort and serenity. Indulge in
+                    world-class amenities, savor delectable cuisine, and embark on unforgettable adventures. Your dream
+                    getaway awaits.</p>
+                <ul class="css-269">
+                    <li>Luxurious accommodations with modern amenities.</li>
+                    <li>Spectacular views of the surrounding nature.</li>
+                    <li>Sustainable practices for eco-conscious travelers.</li>
+                    <li>Dining experiences with a focus on local flavors.</li>
+                </ul>
+            </div>
+            <div class="css-image-01">
+                <img src="{% static 'home-5.png' %}" alt="image">
+            </div>
+        </div>
+    </section>
+
+    <section class="css-360-tour">
+        <h1> Resort 3D Walkthrough</h1>
+        <div class="css-video">
+            <iframe src="https://www.youtube.com/embed/vNYgAp26MZM" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen class="iframe"></iframe>
+        </div>
+        <div class="css-explore-tour">
+            <p class="css-resort-font">Experience our resort through a captivating 360° view.</p>
+            <a href="#" class="b-button bounce">Explore Tour</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h1>Features</h1>
+        <div class="css-features">
+            <div class="css-features-img">
+                <div class="css-image-area">
+                    <img src="{% static 'home-2.png' %}" alt="image">
+                    <div class="css-image-text">
+                        <h2>Mini cottage</h2>
+                    </div>
+                </div>
+                <div class="css-image-area">
+                    <img src="{% static 'home-3.png' %}" alt="image">
+                    <div class="css-image-text">
+                        <h2>Deluxe cottage</h2>
+                    </div>
+                </div>
+                <div class="css-image-area">
+                    <img src="{% static 'home-3.png' %}" alt="image">
+                    <div class="css-image-text">
+                        <h2>Royal cottage</h2>
+                    </div>
+                </div>
+                <div class="css-image-area">
+                    <img src="{% static 'home-1.png' %}" alt="image">
+                    <div class="css-image-text">
+                        <h2>Suit cottage</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="css-features-text">
+                <div class="css-grid-card">
+                    <p class="css-title-card">Luxurious Accommodations</p>
+                    <p class="css-content-card"> Immerse yourself in the lap of luxury with our exquisite resort
+                        cottages.</p>
+                </div>
+                <div class="css-grid-card">
+                    <p class="css-title-card">Modern Amenities</p>
+                    <p class="css-content-card"> Enjoy state-of-the-art facilities, including a swimming pool, kids
+                        playground etc.</p>
+                </div>
+                <div class="css-grid-card">
+                    <p class="css-title-card">Fine Dining Experience</p>
+                    <p class="css-content-card"> Savor delectable culinary delights prepared by our talented chefs.</p>
+                </div>
+                <div class="css-grid-card">
+                    <p class="css-title-card">Convenient Location</p>
+                    <p class="css-content-card"> Located in a prime location, offering easy access to nearby attractions
+                        and landmarks.</p>
+                </div>
+                <div class="css-btn-2298">
+                    <a href="{% url 'service' %}" class="b-button bounce">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="css-sign-now">
+            <h1>Plan and Prepare for your Stay</h1>
+            <a href="{% url 'login' %}" target="_blank" class="s-button">Sign in or Join</a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="css-h3-cot">Resort Amenities</h2>
+        <div class="css-amenitie">
+            <ul class="single-info__detail css-ml">
+                <li class="single-info__item">
+                    <iconify-icon icon="mdi:calendar-end-outline" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-value">Check-In 12:00 PM</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="mdi:calendar-arrow-left" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-value">Check-Out 11:00 AM</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="fluent:leaf-one-20-regular" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-value">Sustainability</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="iconoir:swimming" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-value">Swimming Pool</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="clarity:wifi-line" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Free WiFi</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="iconoir:parking" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Free Parking</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="carbon:restaurant-fine" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Restaurant</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="material-symbols:room-service-outline" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Room service</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="carbon:help-desk" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">24-hour front desk</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="carbon:area" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Living Area</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="game-icons:3d-stairs" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Upstairs Deck</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="fluent:tv-28-regular" height="3rem"></iconify-icon>
+                    <strong class="single-info__item-title">Flatscreen TV</strong>
+                </li>
+                <!-- <li class="single-info__item">
+                <iconify-icon icon="teenyicons:tick-circle-outline" height="2rem"></iconify-icon>
+                <strong class="single-info__item-title">Daily Housekeeping</strong>
+            </li> -->
+                
+            </ul>
+        </div>
+    </section>
+
+    <section class="Gallery">
+        <h2>Resort Gallery</h2>
+        <div class="css-gallery">
+            <div>
+                <img src="{% static 'home-1.png' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'home-2.png' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'home-3.png' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'home-4.png' %}" alt="resort">
+            </div>
+            <div class="v-stretch">
+                <img src="{% static 'home-5.png' %}" alt="resort">
+            </div>
+            <div class="v-stretch">
+                <img src="{% static 'hero.webp' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'home-3.png' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'swiper-4.jpg' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'mini.jpeg' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'samll.webp' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'cart-bg.jpg' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'swiper-2.jpg' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'suit.jpeg' %}" alt="resort">
+            </div>
+            <div class="v-stretch">
+                <img src="{% static 'Deluxe.jpeg' %}" alt="resort">
+            </div>
+            <div class="v-stretch">
+                <img src="{% static 'swiper-1.jpg' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'swiper-2.jpg' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'swiper-3.jpg' %}" alt="resort">
+            </div>
+            <div>
+                <img src="{% static 'samll.webp' %}" alt="resort">
+            </div>
+            <div class="h-stretch">
+                <img src="{% static 'tour.jpg' %}" alt="resort">
+            </div>
+        </div>
+    </section>
+
+    <section class="css-about" id="About">
+        <h2 class="css-h3-cot">About Us</h2>
+        <div class="css-resort">
+            <div class="css-image-01">
+                <img src="{% static 'home-3.png' %}" alt="image">
+            </div>
+            <div class="csss-matter">
+                <p>Experience the epitome of luxury and tranquility at Vanyahill Resort. Nestled amidst breathtaking
+                    natural surroundings, our resort offers a perfect blend of comfort and serenity. Indulge in
+                    world-class amenities, savor delectable cuisine, and embark on unforgettable adventures. Your dream
+                    getaway awaits.</p>
+                <ul class="css-269">
+                    <li>Luxurious accommodations with modern amenities.</li>
+                    <li>Spectacular views of the surrounding nature.</li>
+                    <li>Sustainable practices for eco-conscious travelers.</li>
+                    <li>Dining experiences with a focus on local flavors.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="Gallery">
+        <h2>Contact Us</h2>
+        <div class="css-contact-main">
+            <div class="css-contact-info">
+                <p class="css-p-con">Our Location</p>
+                <div class="css-info-con">
+                    <iconify-icon icon="ph:map-pin-light" height="1.5rem"></iconify-icon>
+                    <p>KUDURU(VILLAGE) MAREDIMILLI,
+                        ALLURI SITHA RAMARAJU DISTRICT,
+                        ANDHRA PRADESH.</p>
+                </div>
+                <div class="css-info-con">
+                    <iconify-icon icon="ph:phone-light" height="1.5rem"></iconify-icon>
+                    <p class="css-phone"><span>+91</span>9652546474.</p>
+                </div>
+                <div class="css-info-con">
+                    <iconify-icon icon="fluent:mail-32-regular" height="1.5rem"></iconify-icon>
+                    <p>examplemail@gmail.com</p>
+                </div>
+            </div>
+            <div class="css-contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3460.692095389414!2d81.73525391487985!3d17.635685087930238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDM4JzA4LjUiTiA4McKwNDQnMTQuOCJF!5e1!3m2!1sen!2sin!4v1686685851980!5m2!1sen!2sin"
+                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>   
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="css-wtsapp">
+            <a href=" https://wa.me/9652546474"><iconify-icon icon="logos:whatsapp-icon"
+                height="3rem"></iconify-icon></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="foot-css">
+            <div class="css-logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+            </div>
+            <div class="css-footer">
+                <div class="css-350">
+                    <p class="css-143">Services</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="#" class="css-211">Mini Cottage</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Suit Cottage</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Deluxe Cottage</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Royal Cottage</a></li>
+                    </ul>
+                </div>
+                <div class="css-350">
+                    <p class="css-143">Quick Links</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'index' %}" class="css-211">Home</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Service</a></li>
+                        <li class="css-210"><a href="#" class="css-211">About</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="css-footer-1">
+                <div class="css-352">
+                    <p class="css-143">Connect</p>
+                    <div class="link-css">
+                        <a href="#" class="css-349"><iconify-icon icon="mdi:facebook" class="f"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="iconoir:instagram" class="i"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="ant-design:linkedin-filled"
+                                class="l"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="basil:youtube-solid"
+                                class="y"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="css-789">
+            <p class="css-09">© 2023 Vanya Hill Resort</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".bg-slider-thumds", {
+            loop: true,
+            spaceBetween: 0,
+            slidesPerView: 0,
+        });
+        var swiper2 = new Swiper(".bg-slider", {
+            loop: true,
+            autoplay:true,
+            autoplaydelay:5000,
+            spaceBetween: 0,
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("mobile-nav").style.width = "70%";
+            document.getElementById("mobile-nav").style.display = "block";
+        }
+        function hidePopup() {
+            document.getElementById("mobile-nav").style.width = "0%";
+        }
+    </script>
+
+    <script>
+        var className = "globalStickyHeader";
+        var scrollTrigger = 80;
+
+        window.onscroll = function () {
+            // We add pageYOffset for compatibility with IE.
+            if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+                document.getElementsByClassName("b-t")[0].classList.add(className);
+                document.getElementsByClassName("b-t")[0].style.display = "block";
+                document.getElementsByTagName("header")[0].style.backgroundColor = "#c602b";
+                document.getElementsByTagName("header")[0].style.position = "relative";
+                //document.getElementsByClassName("css-123")[0].classList.add("css-border");
+            } else {
+                document.getElementsByClassName("b-t")[0].classList.remove(className);
+                document.getElementsByTagName("header")[0].style.position = "fixed";
+                document.getElementsByClassName("b-t")[0].style.display = "none";
+                //document.getElementsByClassName("css-123")[0].classList.remove("css-border");
+            }
+        };
+
+    </script>
+
+    <!-- <script>
+        var className = "globalStickyHeader";
+        var scrollTrigger = 80;
+
+        window.onscroll = function () {
+            // We add pageYOffset for compatibility with IE.
+            if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+                document.getElementsByClassName("sec")[0].classList.add(className);
+            } else {
+                document.getElementsByClassName("sec")[0].classList.remove(className);
+            }
+        };
+
+$(document).ready(function() {
+    $('.dropdown-toggle').dropdown();
+});
+
+    </script> -->
+
+</body>
+
+</html>

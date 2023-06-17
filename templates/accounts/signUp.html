@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up | Vanya Hill Resort</title>
+    <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'signUp.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="css-123-sign">
+            <div class="head-css">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                <div class="css-122">
+                    <a href="{% url 'index' %}" class="s-button">Home</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="css-bg">
+        <h1>Sign Up and Discover Resort Magic</h1>
+    </div>
+    <!-- =================================Amenities============================== -->
+    <div class="css-234">
+        <div class="icon-text">
+            <iconify-icon icon="clarity:wifi-solid" class="icon-s"></iconify-icon>
+            <h3>Free WiFi</h3>
+        </div>
+        <div class="icon-text">
+            <iconify-icon icon="carbon:mobile-check" class="icon-s"></iconify-icon>
+            <h3>Mobile Check-in</h3>
+        </div>
+        <div class="icon-text">
+            <iconify-icon icon="carbon:restaurant-fine" class="icon-s"></iconify-icon>
+            <h3>On-Site Restaurant</h3>
+        </div>
+        <div class="icon-text">
+            <iconify-icon icon="iconoir:swimming" class="icon-s"></iconify-icon>
+            <h3>Swimming Pool</h3>
+        </div>
+    </div>
+    <!-- ==================================End========================================== -->
+    <section class="main-form">
+        <div class="css-form">
+            <div class="css-455">
+                <h1 style="text-align: center;">Begin your Vanya Hill Journey</h1>
+            </div>
+            <div class="css-455 css-450 css-bold">
+                <p>Already a Member? </p><a href="{% url 'login' %}">Sign In Here</a>
+            </div>
+            <div class="css-ft">
+                <div id="errorMessages" class="error" style="display: none;"><!-- <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> --></div>
+                <div id="successMessage" class="success" style="display: none;"></div>
+            </div>
+
+            <div class="css-main-form">
+                <form id="signupForm" method = "POST">
+                    {% csrf_token %}
+                    {% include "base/alert.html" %}
+                    <br>
+                    <div class="css-1">
+                        <div class="css-400">
+                            <label for="firstname" class="t-css">first name*</label>
+                            <input type="text" id="firstName" name="first_name" placeholder="FirstName" class="input-css"
+                                required>
+                        </div>
+                        <div class="css-400">
+                            <label for="lastname" class="t-css">Last name*</label>
+                            <input type="text" id="lastName" name="last_name" placeholder="LastName" class="input-css"
+                                required>
+                        </div>
+                    </div>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="phone">phone number*</label>
+                            <input type="text" id="phoneNumber" name="phone" placeholder="Phone number"
+                                class="input-css-1" required>
+                        </div>
+                    </div>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" placeholder="Email" class="input-css-1"
+                                required>
+                        </div>
+                    </div>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="password" class="css-32">password*</label>
+                            <input type="password" id="password" name="password" placeholder="Password"
+                                class="input-css-1" aria-hidden="true" required>
+                        </div>
+                    </div>
+                    <div class="css-2">
+                        <div class="css-401">
+                            <label for="confirmpass">Confirm password*</label>
+                            <input type="password" id="confirmPassword" name="confirmPass"
+                                placeholder="Confirm password" class="input-css-1" required>
+                        </div>
+                    </div>
+                    <div id="successMessage">
+                        <ul>
+                            <li>Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.</li>
+                            <li>Please enter a valid email address.</li>
+                            <li>Phone number must be 10 digits long.</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="css-check">
+                        <input type="checkbox" id="termsAgreement" name="check" class="input-check" required>
+                        <p> I agree to Vanya Hill Resort <a href="#">Terms and Conditions</a></p>
+                    </div>
+                    <input value="Sign Up" type="submit" class="b-button" />
+
+                </form>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="css-20">
+            <img src="{% static 'hotel_v1.png' %}" alt="image" height="405" width="567">
+            <div class="css-21">
+                <p class="h-css">
+                    Vanya Hill Resort
+                </p>
+                <p class="text-css">
+                    Escape to the serene and luxurious retreat of Vanya Hill Resort. Immerse yourself in a world of
+                    exceptional service, where captivating design harmonizes with breathtaking surroundings. Discover
+                    transformative experiences and create unforgettable memories in our exclusive resort destination.
+                </p>
+                <p class="services-t">
+                    Mini Cottages
+                </p>
+                <p class="services-t">
+                    Suit Cottages
+                </p>
+                <p class="services-t">
+                    DELUXE COTTAGE
+                </p>
+                <p class="services-t">
+                    ROYAL COTTAGE
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="foot-css">
+            <div class="css-logo">
+                <a href="../index.html">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+            </div>
+            <div class="css-footer">
+                <div class="css-350">
+                    <p class="css-143">Services</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Mini Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Suit Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Deluxe Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Royal Cottage</a></li>
+                    </ul>
+                </div>
+                <div class="css-350">
+                    <p class="css-143">Quick Links</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'index' %}" class="css-211">Home</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Packages</a></li>
+                        <li class="css-210"><a href="#" class="css-211">About</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="css-footer-1">
+                <div class="css-352">
+                    <p class="css-143">Connect</p>
+                    <div class="link-css">
+                        <a href="#" class="css-349"><iconify-icon icon="mdi:facebook" class="f"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="iconoir:instagram" class="i"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="ant-design:linkedin-filled"
+                                class="l"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="basil:youtube-solid"
+                                class="y"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="css-789">
+            <p class="css-09">© 2023 Vanya Hill Resort</p>
+        </div>
+    </footer>
+    <!-- 
+ <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var termsAgreement = document.getElementById("termsAgreement").checked;
+          
+            var errorMessages = [];
+            
+            // Validate email
+            if (validateEmail(email)) {
+              errorMessages.push("<li>Please enter a valid email address.</li>");
+            }
+          
+            // Validate password
+            if (!validatePassword(password)) {
+              errorMessages.push("<li>Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.</li>");
+            }
+          
+            // Validate confirm password
+            if (password !== confirmPassword) {
+              errorMessages.push("<li>Passwords do not match.</li>");
+            }
+          
+            // Validate phone number length
+            if (phoneNumber.length !== 10) {
+              errorMessages.push("<li>Phone number must be 10 digits long.</li>");
+            }
+          
+            // Validate terms agreement
+            if (!termsAgreement) {
+              errorMessages.push("<li>Please agree to the terms and conditions.</li>");
+            }
+          
+            if (errorMessages.length === 0) {
+              // Clear error messages
+              document.getElementById("errorMessages").innerHTML = "";
+              document.querySelector("#errorMessages").style.display="none";
+          
+              // Display success message
+              //document.getElementById("successMessage").innerHTML = "Sign up successful! Check your email to verify your email address.";
+              //document.querySelector("#successMessage").style.display="block";
+              
+              // You can perform additional actions here, such as submitting the form to a server
+            } else {
+              // Display error messages
+              //document.getElementById("successMessage").innerHTML = "";
+              document.querySelector("#errorMessages").style.display="block";
+              document.getElementById("errorMessages").innerHTML = errorMessages.join("<br>");
+            }
+          });
+          
+          function validateEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-])*$/;
+            return emailPattern.test(email);
+          }
+          
+          function validatePassword(password) {
+            // Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return passwordPattern.test(password);
+          }
+    </script>
+    <script src="../assets/js/validation.js"></script>
+    -->
+   </body>
+
+</html>

@@ -1,0 +1,111 @@
+.css-cart-bg{
+  height: 404px;
+  background-image: url("../static/cart-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.css-cart-main{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  margin: 0px auto !important ;
+  background-color: #f1f2f3; 
+}
+.css-cart-form{
+  transform: translateY(-280px);
+  width: 70%;
+  padding: 0px 1rem;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.css-table-total{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+.cart-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.css-head-cart{
+  margin: 20px 0px;
+  font-size: 1.5rem;
+  padding-left: 15px ;
+}
+.css-cart-info h3, .css-cart-info p{
+  width: 50%;
+}
+.css-cart-info{
+  width: 100%;
+  padding: 0px 20px;
+}
+.css-tr{
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.css-tr img{
+  padding: 10px;
+}
+.css-cart-li{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.remove-button {
+  padding: 0.5rem 1.5rem;
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #000;
+  border: 1px solid #000;   
+  margin: 0.5rem 0 ;
+  cursor: pointer;
+  transition: .2s ease-out;
+}
+
+.remove-button:hover, .add-button:hover{
+  background-color: #000;
+  transform: scale(1.062);
+}
+.add-button{
+  padding: 0.5rem 1rem;
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #000;
+  border: 1px solid #000;   
+  margin: 0.5rem 0 ;
+  cursor: pointer;
+  transition: .2s ease-out;
+}
+.css-cart-total{
+  width: 30%;
+  margin-left: 20px;
+}
+.css-rooms{
+  padding: 0px 20px;
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.css-cart-total-1{
+  padding: 10px 15px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  
+}

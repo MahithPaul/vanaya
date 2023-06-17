@@ -1,0 +1,10 @@
+{% extends "admin/change_form.html" %}
+
+{% block object-tools-items %}
+    {{ block.super }}
+    {% if show_search_button %}
+        <li>
+            <a href="{% url 'admin:Cart_changelist' %}?q={{ object.id }}">Search</a>
+        </li>
+    {% endif %}
+{% endblock %}

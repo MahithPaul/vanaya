@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart is empty | Vanya Hill Resort</title>
+    <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">    
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'head-footer.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500&family=Nunito+Sans:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif !important;
+            scroll-behavior: smooth;
+        }
+
+        /* ==================Header part======================= */
+        header {
+            width: 100%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            background-color: #0c602b;
+        }
+
+        body {
+            background-color: #f3eee7;
+        }
+
+        .css-123 {
+            display: block;
+            padding: 0 0.5rem 0 0.5rem;
+            margin: 0px 170px;
+        }
+
+        .head-css {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+        }
+
+        .css-122 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .s-button {
+            padding: 0.7rem 1rem;
+            color: #f9f9f9;
+            text-decoration: none;
+            border: 1px solid white;
+        }
+
+        .logo-css {
+            text-align: center;
+        }
+
+        .main-css-123 {
+            color: #333333;
+            padding: 3.5rem 3.6rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .content-head {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        .content-head p{
+            margin-top: 15px;
+        }
+        @media screen and (max-width:450px) {
+            .main-css-123 {
+                padding: 2.5rem 2rem;
+            }
+            .css-123{
+                margin: 0px;
+            }
+            h1{
+                font-size: 1.6rem;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+            .content-head {
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="css-123">
+            <div class="head-css">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                {% if current_user.is_authenticated %}
+                <div class="css-res-12">
+                    <a href="{% url 'cart' %}" class="b-button">My Bookings</a>
+                    <a href="{% url 'user_carts' %}"  class="s-button">Previous Bookings</a>
+                    <a href="{% url 'logout' %}"  class="s-button">Log out</a>
+                </div>
+                {% else %}
+                <div class="css-122">
+                    <a href="{% url 'login' %}" target="_blank" class="s-button">Sign in or Join</a>
+                </div>
+                {% endif %}
+                <div class="mobile-hamburger">
+                    <iconify-icon icon="iconamoon:menu-burger-horizontal-thin" onclick="openNav()"
+                        height="33px"></iconify-icon>
+                </div>
+            </div>
+        </div>
+        <div class="b-t m-b">
+            <div class="css-123">
+                <div class="css-124">
+                    <nav>
+                        <ul class="css-223">
+                            <li class="css-list"><a href="{% url 'index' %}" class="list-a">Home</a></li>
+                            <li class="css-list"><a href="{% url 'service' %}" class="list-a">Services</a></li>
+                            <li class="css-list"><a href="#" class="list-a">About</a></li>
+                            <li class="css-list"><a href="#" class="list-a">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <a href="{% url 'service' %}" class="b-button">Book Now</a>
+                </div>
+            </div>
+        </div>
+         <!-- mobile menu  -->
+         <div class="overlay" id="mobile-nav" style="width:100%;">
+            <a href="javascript:void(0)" class="closebtn" onclick="hidePopup()" style="font-size: 55px;">×</a>
+
+            <div class="overlay-content">
+                <div class="css-menu">
+                    <p>Menu</p>
+                </div>
+                <div class="css-item">
+                    <ul>
+                        <li><a href="{% url 'index' %}" class="css-a">Home</a></li>
+                        <li><a href="{% url 'service' %}" class="css-a">Service</a></li>
+                        <li><a href="log-in.html" class="css-a css-h">About</a></li>
+                        <li><a href="Contact.html" class="css-a">Contact</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li><a href="{% url 'cart' %}" class="b-button css-mobile-side">My Bookings</a></li>
+                        <li><a href="{% url 'user_carts' %}"  class="s-button css-mobile-side">Previous Bookings</a></li>
+                        <li><a href="{% url 'logout' %}"  class="s-button css-mobile-side">Log out</a></li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}" class="css-ht4">Sign In or Join</a></li>
+                        {% endif %}
+                    </ul>
+                    <a href="{% url 'service' %}" class="css-mobile">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- ==================== -->
+    </header>
+    <div class="main-css-123">
+        <h1>Cart Empty</h1>
+        <div class="icon">
+            <iconify-icon icon="mdi-light:cart" style="color: #0c602b;" height="7rem"></iconify-icon>
+        </div>
+        <div class="content-head">
+            <p>Oops! Cart Empty</p>
+            <p>Explore Our <a href="{% url 'service' %}">Services </a>Now</p>
+        </div>
+    </div>
+    <footer>
+        <div class="foot-css">
+            <div class="css-logo">
+                <a href="../index.html">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+            </div>
+            <div class="css-footer">
+                <div class="css-350">
+                    <p class="css-143">Services</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Mini Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Suit Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Deluxe Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Royal Cottage</a></li>
+                    </ul>
+                </div>
+                <div class="css-350">
+                    <p class="css-143">Quick Links</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'index' %}" class="css-211">Home</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Packages</a></li>
+                        <li class="css-210"><a href="#" class="css-211">About</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="css-footer-1">
+                <div class="css-352">
+                    <p class="css-143">Connect</p>
+                    <div class="link-css">
+                        <a href="#" class="css-349"><iconify-icon icon="mdi:facebook" class="f"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="iconoir:instagram" class="i"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="ant-design:linkedin-filled"
+                                class="l"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="basil:youtube-solid"
+                                class="y"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="css-789">
+            <p class="css-09">© 2023 Vanya Hill Resort</p>
+        </div>
+    </footer>
+</body>
+
+</html>

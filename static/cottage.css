@@ -1,0 +1,165 @@
+.css-bg-cottage{
+    height: 404px;
+    background-image: url("../static/cottage-bg-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.css-h1-cot{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 20px 0px;
+    background-color: #f5f7f9;
+}
+.css-flex-cottage{
+    display: flex;
+    justify-content: space-between;
+}
+.css-section-01{
+    background-color: #f5f7f9;
+    padding: 10px 0px;
+}
+.cottage-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+.cottage-description {
+    font-size: 1.5rem;
+  }
+.css-cottage-info{
+    padding: 10px 30px;
+}
+.single-info__details {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+}
+.single-info__details li {
+    font-size: 1.5rem;
+    flex: 0 0 50%;
+    padding: 0 0.85rem 0.85rem 0;
+}
+.css-h2-cot{
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 2.3rem;
+}
+.css-360-tour{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+.css-360-tour img{
+    width: 900px;
+    height: 500px;
+    margin-bottom: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 12px;
+}
+/* .image__background-image {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #fff 100%), url(../img/trc-pattern.svg);
+    background-repeat: repeat;
+    opacity: 0.3;
+} */
+.css-amenitie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7f9;
+}
+.single-info__detail {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    justify-content: center;
+    margin-right: 20px;
+    margin-left: 70px;
+}
+.single-info__detail li {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+    font-size: 1.5rem;
+    flex: 30% 0 0;
+    padding-bottom: 30px;
+}
+
+.css-h3-cot{
+    text-align: center;
+    margin: 60px 0px 0px;
+    padding: 20px 0px;
+    font-size: 2.3rem;
+    background-color: #f5f7f9;
+}
+
+/* ===================REVIEW SECTION==================== */
+#review{
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #090f19;
+    align-items: center;
+}
+.head-review h1{
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    color: turquoise;
+    text-transform: uppercase;
+    display: flex;
+    font-family: 'Nunito Sans', sans-serif;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.head-review .client-review{
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    display: flex;
+    font-family: 'Nunito Sans', sans-serif;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.main-container{
+    max-width: 1120px;
+    width: 100%;
+    padding:  1rem 0;
+    background-color: white;
+}
+.css-swiper{
+    margin-bottom: 50px;
+}
+swiper-container {
+    width: 40%;
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+  .review-slide img {
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #11ece5;
+    color: #11ece5;
+    font-size: 2rem;
+  }
+.css-price-book-01{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.css-price-size{
+    font-size: 2.3rem;
+    font-weight: 700;
+}

@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore {{product.product_name}} | Vanya Hill Resort</title>
+    <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'cottage.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'head-footer.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="css-123">
+            <div class="head-css">
+                <a href="index.html">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                {% if current_user.is_authenticated %}
+                <div class="dropdown">
+                    <span class="s-button" style="text-align: center; border: none;">
+                        Hi {{ current_user.first_name }}<br>    
+                        <a class="list-a" href="{% url 'logout' %}">|Log Out|</a>
+                        <a class="list-a" href="{% url 'cart' %}">My Cart|</a>
+                        <a class="list-a" href="{% url 'user_carts' %}">|Previous Bookings|</a>
+                    </span>
+                </div>
+                {% else %}
+                <div class="css-122">
+                    <a href="{% url 'login' %}" target="_blank" class="s-button">Sign in or Join</a>
+                </div>
+                {% endif %}
+                <div class="mobile-hamburger">
+                    <iconify-icon icon="iconamoon:menu-burger-horizontal-thin" onclick="openNav()"
+                        height="33px"></iconify-icon>
+                </div>
+            </div>
+
+        </div>
+        <div class="b-t">
+            <div class="css-123">
+                <div class="css-124">
+                    <nav>
+                        <ul class="css-223">
+                            <li class="css-list"><a href="{% url 'index' %}" class="list-a">Home</a></li>
+                            <li class="css-list"><a href="{% url 'service' %}" class="list-a">Services</a></li>
+                            <li class="css-list"><a href="#" class="list-a">About</a></li>
+                            <li class="css-list"><a href="#" class="list-a">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <a href="{% url 'service' %}" class="b-button">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu  -->
+        <div class="overlay" id="mobile-nav" style="width:100%;">
+            <a href="javascript:void(0)" class="closebtn" onclick="hidePopup()" style="font-size: 55px;">×</a>
+
+            <div class="overlay-content">
+                <div class="css-menu">
+                    <p>Menu</p>
+                </div>
+                <div class="css-item">
+                    <ul>
+                        <li><a href="/index.html" class="css-a">Home</a></li>
+                        <li><a href="/pages/service.html" class="css-a">Service</a></li>
+                        <li><a href="log-in.html" class="css-a css-h">About</a></li>
+                        <li><a href="Contact.html" class="css-a">Contact</a></li>
+                        <li><a href="pages/signUp.html" class="css-ht4">Sign In or Join</a></li>
+                    </ul>
+                    <a href="/pages/service.html" class="css-mobile">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- ==================== -->
+    </header>
+    <div class="css-bg-cottage">
+    </div>
+    <h1 class="css-h1-cot">{{product.product_name}}</h1>
+    <section class="css-section-01">
+        <div class="css-flex-cottage">
+            <div class="css-img-cottage" style="padding-left: 30px;">
+                <img src="/media/{{product.title_images.first.image}}" alt="image" width="650px" height="500px">
+            </div>
+            <div class="css-cottage-info">
+                <h1 class="cottage-heading">Accommodation Details</h1>
+                <p class="cottage-description">{{product.explore_description}}</p>
+                <ul class="single-info__details">
+                    <li class="single-info__item">
+                        <strong class="single-info__item-title">Bedrooms:</strong>
+                        <span class="single-info__item-value">{{product.beds}}</span>
+                    </li>
+                    <li class="single-info__item">
+                        <strong class="single-info__item-title">Adults:</strong>
+                        <span class="single-info__item-value">{{product.adults}}</span>
+                    </li>
+                    <li class="single-info__item">
+                        <strong class="single-info__item-title">Children:</strong>
+                        <span class="single-info__item-value">{{product.children}}</span>
+                    </li>
+                    <li class="single-info__item">
+                        <strong class="single-info__item-title">Square Meters:</strong>
+                        <span class="single-info__item-value">{{product.area}}</span>
+                    </li>
+                </ul>
+                <div class="css-price-book-01">
+                    <a href="{% url 'get_product' slug=product.slug %}" class="b-button">Book Now</a>
+                    <p class="css-price-size">₹{{product.price}}</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <h2 class="css-h2-cot">360° Cottage Tour</h2>
+    <section>
+        <div class="css-360-tour">
+            <img src="{% static 'tour.jpg' %}" alt="image">
+            <a href="#" class="b-button">Explore Tour</a>
+        </div>
+    </section>
+    <h2 class="css-h3-cot">Cottage Amenities</h2>
+    <section>
+        <div class="css-amenitie">
+            <ul class="single-info__detail">
+                <li class="single-info__item">
+                    <iconify-icon icon="iconoir:swimming" height="2rem"></iconify-icon>
+                    <strong class="single-info__item-value">Swimming Pool</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="clarity:wifi-line" height="2rem"></iconify-icon>
+                    <strong class="single-info__item-title">Free WiFi</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="iconoir:parking" height="2rem"></iconify-icon>
+                    <strong class="single-info__item-title">Free Parking</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="carbon:restaurant-fine" height="2rem"></iconify-icon>
+                    <strong class="single-info__item-title">Restaurant</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="material-symbols:room-service-outline" height="2rem"></iconify-icon>
+                    <strong class="single-info__item-title">Room service</strong>
+                </li>
+                <li class="single-info__item">
+                    <iconify-icon icon="carbon:help-desk" height="2rem"></iconify-icon>
+                    <strong class="single-info__item-title">24-hour front desk</strong>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <h2 class="css-h2-cot">Cottage Gallery</h2>
+    <section>
+        <div class="css-swiper">
+            
+            <swiper-container class="mySwiper" autoplay="true" autoplay-disableOnInteraction="false"
+            autoplay-pauseOnMouseEnter="true" autoplay-delay="2000" centeredSlides="true" , loop="true" ,
+            pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true" slides-per-view="auto"
+            coverflow-effect-rotate="0" coverflow-effect-stretch="-20" coverflow-effect-depth="100"
+            coverflow-effect-modifier="2.5" coverflow-effect-slide-shadows="false">
+            {% for image in product.product_images.all %}
+            <div class="swiper-slide review-slide">
+                <img src="/media/{{image.image}}" alt="image" width="629px" height="429px">
+            </div>
+            {% endfor %}
+        </swiper-container>
+      
+        </div>
+        
+    </section>
+    <footer>
+        <div class="foot-css">
+            <div class="css-logo">
+                <a href="../index.html">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+            </div>
+            <div class="css-footer">
+                <div class="css-350">
+                    <p class="css-143">Services</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Mini Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Suit Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Deluxe Cottage</a></li>
+                        <li class="css-210"><a href="{% url 'service' %}" class="css-211">Royal Cottage</a></li>
+                    </ul>
+                </div>
+                <div class="css-350">
+                    <p class="css-143">Quick Links</p>
+                    <ul class="css-209">
+                        <li class="css-210"><a href="{% url 'index' %}" class="css-211">Home</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Packages</a></li>
+                        <li class="css-210"><a href="#" class="css-211">About</a></li>
+                        <li class="css-210"><a href="#" class="css-211">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="css-footer-1">
+                <div class="css-352">
+                    <p class="css-143">Connect</p>
+                    <div class="link-css">
+                        <a href="#" class="css-349"><iconify-icon icon="mdi:facebook" class="f"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="iconoir:instagram" class="i"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="ant-design:linkedin-filled"
+                                class="l"></iconify-icon></a>
+                        <a href="#" class="css-349"><iconify-icon icon="basil:youtube-solid"
+                                class="y"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="css-789">
+            <p class="css-09">© 2023 Vanya Hill Resort</p>
+        </div>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mobile-nav").style.width = "70%";
+            document.getElementById("mobile-nav").style.display = "block";
+        }
+        function hidePopup() {
+            document.getElementById("mobile-nav").style.width = "0%";
+        }
+    </script>
+    <script>
+        var className = "globalStickyHeader";
+        var scrollTrigger = 80;
+
+        window.onscroll = function () {
+            // We add pageYOffset for compatibility with IE.
+            if (window.scrollY >= scrollTrigger || window.pageYOffset >= scrollTrigger) {
+                document.getElementsByClassName("b-t")[0].classList.add(className);
+            } else {
+                document.getElementsByClassName("b-t")[0].classList.remove(className);
+            }
+        };
+
+    </script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Vanya Hill Resort</title>
+    <link rel="shortcut icon" href="{% static 'icon.png' %}" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Caudex', serif !important;
+            scroll-behavior: smooth;
+        }
+
+        /* ==================Header part======================= */
+        header {
+            width: 100%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            background-color: #0c602b;
+        }
+
+        body {
+            background-color: #f3eee7;
+        }
+
+        .css-123 {
+            display: block;
+            padding: 0 0.5rem 0 0.5rem;
+            margin: 0px 170px;
+        }
+
+        .head-css {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+        }
+
+        .css-122 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .s-button {
+            padding: 0.7rem 1rem;
+            color: #f9f9f9;
+            text-decoration: none;
+            border: 1px solid white;
+        }
+
+        .logo-css {
+            text-align: center;
+        }
+
+        .main-css-123 {
+            color: #333333;
+            padding: 3.5rem 3.6rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .icon {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: bouncing 0.6s ease infinite alternate;
+        }
+
+        @keyframes bouncing{
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .content-head {
+            font-size: 1.5rem;
+        }
+
+        @media screen and (max-width:450px) {
+            .main-css-123 {
+                padding: 2.5rem 2rem;
+            }
+            .css-123{
+                margin: 0px;
+            }
+            h1{
+                font-size: 1.6rem;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+            .content-head {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="css-123">
+            <div class="head-css">
+                <a href="../index.html">
+                    <img src="{% static 'vl.png' %}" alt="Logo" width="170px" height="60px">
+                </a>
+                {% if current_user.is_authenticated %}
+                <div class="dropdown">
+                    <span class="s-button" style="text-align: center; border: none;">
+                        Hi {{ current_user.first_name }}<br>    
+                        <a class="list-a" href="{% url 'logout' %}">|Log Out|</a>
+                        <a class="list-a" href="{% url 'cart' %}">My Cart|</a>
+                        <a class="list-a" href="{% url 'user_carts' %}">|Previous Bookings|</a>
+                    </span>
+                </div>
+                {% else %}
+                <div class="css-122">
+                    <a href="{% url 'login' %}" target="_blank" class="s-button">Sign in or Join</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <div class="main-css-123">
+        <h1>Payment Successfull</h1>
+        <div class="icon">
+            <iconify-icon icon="icon-park:success" style="color: #0c602b;" height="10rem"></iconify-icon>
+        </div>
+        <div class="content-head">
+            <p>Thank You {{ current_user.first_name }} for choosing us. Your Payment was Successfull and your booking was processed.</p>
+            <p> To access your Booking, Go to your <a href="{%url 'user_carts' %}">Bookings</a> Page. Check your Inbox for Booking details!</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>
